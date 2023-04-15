@@ -33,4 +33,4 @@ yarn install
 yarn start
 ```
 
-You can now open your browser and use the app on [http://localhost:3000](http://localhost:3000).
+You can now open your browser and use the app on [http://localhost:5173/](http://localhost:5173/).

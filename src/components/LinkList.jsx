@@ -1,3 +1,5 @@
+import Link from "./Links";
+
 const LinkList = () => {
   const { data } = useQuery(FEED_QUERY);
 
@@ -13,3 +15,5 @@ const LinkList = () => {
     </div>
   );
 };
+
+export default LinkList;
