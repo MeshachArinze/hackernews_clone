@@ -3,8 +3,8 @@ async function feed(parent, args, context, info) {
     ? {
         OR: [
           { description: { contains: args.filter } },
-          { url: { contains: args.filter } }
-        ]
+          { url: { contains: args.filter } },
+        ],
       }
     : {};
 
@@ -12,18 +12,18 @@ async function feed(parent, args, context, info) {
     where,
     skip: args.skip,
     take: args.take,
-    orderBy: args.orderBy
+    orderBy: args.orderBy,
   });
 
   const count = await context.prisma.link.count({ where });
 
   return {
-    id: 'main-feed',
+    id: `main-feed:${JSON.stringify(args)}`,
     links,
-    count
+    count,
   };
 }
 
 module.exports = {
-  feed
+  feed,
 };
